@@ -18,7 +18,7 @@
         }
     
         form {
-            background: #333;
+            background: #444;
             padding: 30px 20px 30px;
             position: fixed;
             bottom: 0;
@@ -35,7 +35,7 @@
     
         form button {
             width: 9%;
-            background: rgb(130, 224, 255);
+            background: rgb(201, 171, 21);
             border: none;
             padding: 10px;
             border-radius: 5px;
@@ -56,6 +56,13 @@
         }
     </style>
 </head>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket = io();
+    console.log(socket);
+    
+</script>
 
 <body>
     <ul id="messages"></ul>
