@@ -7,9 +7,15 @@ app.get('/', (req, res, err) => {
     res.sendFile(__dirname + '/index.html')
 });
 
-io.on('connection', () => {
+io.on('connection', (socket) => {
     console.log('a user connected');
+    socket.on('text_message', (msg) => {
+        console.log(msg);
+        
+    });
 });
+
+
 
 http.listen(3000, () => {
     console.log('Listening on port *:3000')

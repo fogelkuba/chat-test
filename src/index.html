@@ -58,10 +58,20 @@
 </head>
 
 <script src="/socket.io/socket.io.js"></script>
+
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+
 <script>
-    var socket = io();
-    console.log(socket);
-    
+    $(function() {
+          var socket = io();
+
+          $('form').submit(function(e){
+            e.preventDefault();
+            socket.emit('text_message', $('#m').val());
+            $('#m').val('');
+            return false;
+          });
+    });
 </script>
 
 <body>
