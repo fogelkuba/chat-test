@@ -10,11 +10,10 @@ app.get('/', (req, res, err) => {
 io.on('connection', (socket) => {
     console.log('a user connected');
     socket.on('text_message', (msg) => {
-        console.log(msg);
+        console.log('message: ', msg);
         
     });
 });
-
 
 
 http.listen(3000, () => {
