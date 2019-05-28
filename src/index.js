@@ -9,10 +9,19 @@ app.get('/', (req, res, err) => {
 
 io.on('connection', (socket) => {
     console.log('a user connected');
+    // console.log(socket.id);
+    
     socket.on('text_message', (msg) => {
-        console.log('message: ', msg);
-        const date = new Date();
-        io.emit('chat message', msg + date);
+
+        const message = {
+            type: 'text',
+            message: msg,
+            date: new Date()
+        }
+
+        console.log('message: ', message);
+        // const date = new Date();
+        io.emit('chat message', message);
     });
 });
 
