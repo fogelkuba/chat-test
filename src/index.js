@@ -9,7 +9,6 @@ app.get('/', (req, res, err) => {
 
 io.on('connection', (socket) => {
     console.log('a user connected');
-    // console.log(socket.id);
     
     socket.on('text_message', (msg) => {
 
@@ -20,7 +19,6 @@ io.on('connection', (socket) => {
         }
 
         console.log('message: ', message);
-        // const date = new Date();
         io.emit('chat message', message);
     });
 });
